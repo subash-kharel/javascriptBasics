@@ -50,6 +50,8 @@ cityForm.addEventListener('submit', e =>{
 
     //get city value
     const cityInput = cityForm.city.value.trim();
+    //adding city Input to local storage so that next time user can see the default location searched for
+    localStorage.setItem('cityName', cityInput);
     console.log('cityInput', cityInput)
     cityForm.reset();
 
@@ -58,3 +60,9 @@ cityForm.addEventListener('submit', e =>{
         updateUI(data);
     }).catch((error)=>console.log('errror', error));
 })
+
+if(localStorage.getItem('cityName')){
+    updateCity(localStorage.getItem('cityName'))
+    .then(data =>updateUI(data))
+    .catch(error => console.log(error))
+}
