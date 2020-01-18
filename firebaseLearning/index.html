@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  
+    <title>Database Firebase</title>
+</head>
+<body>
+    <div class="container my-5">
+        <h2>Recipes</h2>
+        <ul id ="recipeList">
+            <li>Mushroom pie</li>
+            <li>Curry</li>
+        </ul>
+        <form id ="myForm">
+          <label for="recipe">Add a new recipe:</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="recipe" required>
+            <div class="input-group-append">
+              <input type="submit" value="add" class="btn btn-outline-secondary">
+            </div>
+          </div>
+        </form>
+      </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<!-- <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script> -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyADg6epQS_tDk_68x3MEqOE0Hnm06B-6I0",
+    authDomain: "javascriptlearing-95c68.firebaseapp.com",
+    databaseURL: "https://javascriptlearing-95c68.firebaseio.com",
+    projectId: "javascriptlearing-95c68",
+    storageBucket: "javascriptlearing-95c68.appspot.com",
+    messagingSenderId: "246678873161",
+    appId: "1:246678873161:web:36b85dd7260979c15f0b98",
+    measurementId: "G-JPWQS73Y0X"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+//   firebase.analytics();
+
+   const dbConnectionInstance = firebase.firestore();
+</script>
+
+<script src = "sandbox.js"></script>
+</body>
+</html>

@@ -2,6 +2,10 @@ const cityForm = document.querySelector('form');
 const card = document.querySelector('.card');
 const details = document.querySelector('.details');
 
+
+//new implementation 
+const forecast = new Forecast();
+
 const updateUI = (data) =>{
     const cityDets = data.cityDets;
     const weather = data.weather;
@@ -56,7 +60,7 @@ cityForm.addEventListener('submit', e =>{
     cityForm.reset();
 
     //update ui with new city
-    updateCity(cityInput).then ((data)=>{
+    forecast.updateCity(cityInput).then ((data)=>{
         updateUI(data);
     }).catch((error)=>console.log('errror', error));
 })
@@ -66,3 +70,5 @@ if(localStorage.getItem('cityName')){
     .then(data =>updateUI(data))
     .catch(error => console.log(error))
 }
+
+
